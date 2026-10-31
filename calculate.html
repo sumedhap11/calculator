@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calculate Interest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gradient-to-br from-slate-100 to-blue-100 min-h-screen p-6">
+    <div class="max-w-4xl mx-auto bg-white/95 p-6 md:p-8 rounded-2xl shadow-xl border border-white">
+      <h1 class="text-2xl font-bold mb-2 text-gray-800">Calculate Interest</h1><p class="text-sm text-slate-500 mb-6">Simple interest calculator · Instant visual breakdown</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <label class="block mb-1">Amount</label>
+          <input
+            type="text"
+            placeholder="Enter amount"
+            id="x1"
+            class="border p-2 w-full rounded mb-4"
+          />
+
+          <label class="block mb-1">Rate of Interest (%)</label>
+          <input
+            type="text"
+            placeholder="Enter ROI"
+            id="x2"
+            class="border p-2 w-full rounded mb-4"
+          />
+
+          <label class="block mb-1">Time Duration (Years)</label>
+          <input
+            type="text"
+            placeholder="Enter duration"
+            id="x3"
+            class="border p-2 w-full rounded mb-4"
+          />
+
+          <button
+            onclick="calculate()"
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Calculate
+          </button>
+
+          <p id="error" class="text-red-500 mt-3"></p>
+          <p id="msg" class="mt-4 text-green-700 leading-6"></p>
+        </div>
+
+        <div class="border rounded-lg p-4">
+          <h2 class="text-lg font-semibold text-center mb-4">
+            Interest Breakdown
+          </h2>
+
+          <div class="relative w-full max-w-sm mx-auto h-64">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="calculate.js"></script>
+  </body>
+</html>
